@@ -1,0 +1,52 @@
+<div class="container m-5">
+    <h2>Agregar Compra</h2>
+    <hr>
+    <form>
+        <div class="form-group">
+            <label for="material">Material:</label>
+            <div>
+                <select id="material" name="material" class="custom-select" #material>
+          <option *ngFor="let p of materiales" value="{{p.id_material}}">{{p.name}}</option>
+          
+        </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="destino">Destino:</label>
+            <div>
+                <select id="destino" name="destino" class="custom-select" #purpose>
+                    <option *ngFor="let p of modules" value="{{p.id_purpose}}">{{p.name}}</option>
+          
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="unit">Precio Unitario:</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-dollar"></i>
+                    </div>
+                </div>
+                <input id="unit" name="unit" type="text" class="form-control" #unitprice>
+                <div class="input-group-append">
+                    <div class="input-group-text">Bs.</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="qtty">Cantidad:</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-sliders"></i>
+                    </div>
+                </div>
+                <input id="qtty" name="qtty" type="text" class="form-control" #quantity>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="addPurchase(material.value, purpose.value, unitprice.value, quantity.value)">Agregar</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,34 @@
+<div class="container m-5">
+    <h2>Nuevo Módulo</h2>
+    <hr>
+    <form>
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-tag"></i>
+                    </div>
+                </div>
+                <input id="name" name="name" type="text" class="form-control" #name>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="text1">Presupuesto:</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-money"></i>
+                    </div>
+                </div>
+                <input id="text1" name="text1" type="text" class="form-control" #budget>
+                <div class="input-group-append">
+                    <div class="input-group-text">Bs.</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="addModule(name.value,budget.value)">Agregar</button>
+        </div>
+    </form>
+</div>

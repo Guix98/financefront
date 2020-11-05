@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "finance-frontend"
+    }
+  },
+  "defaultProject": "finance-frontend",
+  "cli": {
+    "analytics": "4dbd8b2d-f12a-4596-bd90-d0ff7da957bf"
+  }
 }

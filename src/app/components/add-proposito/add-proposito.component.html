@@ -1,0 +1,29 @@
+<div class="container m-5">
+    <h2>Nuevo Destino de material</h2>
+    <hr>
+    <form>
+        <div class="form-group">
+            <label for="material">Modulo:</label>
+            <div>
+                <select id="material" name="material" class="custom-select" #module>
+          <option *ngFor="let material of materiales"value="{{material.id_module}}">{{material.name}}</option>
+          
+        </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-tag"></i>
+                    </div>
+                </div>
+                <input id="name" name="name" type="text" class="form-control" #name>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="addPurpose(module.value,name.value)">Agregar</button>
+        </div>
+    </form>
+</div>

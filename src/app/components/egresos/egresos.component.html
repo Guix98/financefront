@@ -1,0 +1,67 @@
+<div *ngIf="alert" class="alert alert-danger" role="alert">
+    El monto ingresado es mayor al saldo
+</div>
+
+<div class="container m-5">
+    <h2>Registrar Egreso</h2>
+    <hr>
+    <form>
+        <div class="form-group">
+            <label for="concept">Detalle:</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-pencil"></i>
+                    </div>
+                </div>
+                <input id="concept" name="concept" type="text" class="form-control" #concept>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="amount">Monto:</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-dollar"></i>
+                    </div>
+                </div>
+                <input id="amount" name="amount" type="number" class="form-control" #amount>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Tipo:</label>
+            <div>
+                <div *ngFor="let option of radio" class="custom-control custom-radio custom-control-inline">
+                    <input name="radio" id="{{option}}" type="radio" class="custom-control-input" value="{{option}}" (change)="choose($event)">
+                    <label for="{{option}}" class="custom-control-label">{{option}}</label>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="text2">Fecha:</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                </div>
+                <input id="text2" name="text2" type="date" class="form-control" #date>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="observations">Observaciones:</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-eye"></i>
+                    </div>
+                </div>
+                <input id="observations" name="observations" type="text" class="form-control" #observations>
+            </div>
+        </div>
+        <div class="form-group">
+            <button name="button" type="button" class="btn btn-primary" (click)="addEgreso(concept.value,observations.value,amount.value,date.value)">Añadir</button>
+        </div>
+    </form>
+</div>
